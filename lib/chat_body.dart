@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'app_constant.dart';
 
 class ChatBody extends StatelessWidget {
   @override
@@ -8,8 +9,8 @@ class ChatBody extends StatelessWidget {
         child: ListView(
           children: <Widget>[
             ChatTile("Rizwan","hahaah","5:24 pm", isRead: false, chatColor: Colors.green ,),
-            ChatTile("Jhon","Hey! man","5:24 pm", chatColor: Colors.redAccent,),
-            ChatTile("Rock","Okey bro.. c u","5:24 pm", isRead: false,unreadcound: 5,),
+            ChatTile("Jhon","Hey! man","9:01 pm", chatColor: Colors.redAccent,),
+            ChatTile("Rock","Okey bro.. c u","7:44 am", isRead: false,unreadcound: 5,),
            
           ],
         ));
@@ -39,7 +40,7 @@ class ChatTile extends StatelessWidget {
             child: Text(
               _name[0],
               style: TextStyle(
-                  fontFamily: 'poppins_semibold', color: Colors.white),
+                  fontFamily: ChattyFont.SEMIBOLD, color: Colors.white),
             ),
             backgroundColor: chatColor,
           ),
@@ -53,10 +54,13 @@ class ChatTile extends StatelessWidget {
                 Text(_name,
                     style: TextStyle(
                       fontSize: 16,
-                      fontFamily: 'poppins_medium')),
+                      fontFamily: ChattyFont.MEDIUM )),
                 Text(
                  _chat,
-                  style: TextStyle(fontSize: 14, color: Colors.black54),
+                  style: TextStyle(
+                    fontSize: 14, 
+                    color: isRead ? Colors.black54 : Colors.black87,
+                    fontFamily: isRead ? ChattyFont.REGULAR : ChattyFont.MEDIUM),
                 )
               ],
             ),
@@ -73,7 +77,7 @@ class ChatTile extends StatelessWidget {
               if (!isRead)
                 Container(
                   child: Center(child: Text("$unreadcound",
-                   style: TextStyle(fontSize: 10, color: Colors.white, fontFamily: 'poppins_semibold'),)),
+                   style: TextStyle(fontSize: 10, color: Colors.white, fontFamily: ChattyFont.SEMIBOLD),)),
                   height: 15,
                   width: 15,
                   decoration:

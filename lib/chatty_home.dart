@@ -36,7 +36,7 @@ class _ChatHomeState extends State<ChatHome> {
       items: <BottomNavigationBarItem>[
         BottomNavigationBarItem(title: Text('Chats'), icon: Icon(ChattyIcons.chat)),
         BottomNavigationBarItem(
-            title: Text('People'), icon: Icon(ChattyIcons.people)),
+            title: Text('Persons'), icon: Icon(ChattyIcons.people)),
       ],
       currentIndex: _selectedIndex,
       selectedItemColor: Colors.black87,
