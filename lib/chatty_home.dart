@@ -1,3 +1,4 @@
+import 'package:chatty/presentations/chatty_icons_icons.dart';
 import 'package:flutter/material.dart';
 import 'app_constant.dart';
 import 'chat_body.dart';
@@ -33,9 +34,9 @@ class _ChatHomeState extends State<ChatHome> {
     return BottomNavigationBar(
       elevation: 5,
       items: <BottomNavigationBarItem>[
-        BottomNavigationBarItem(title: Text('Chats'), icon: Icon(Icons.chat)),
+        BottomNavigationBarItem(title: Text('Chats'), icon: Icon(ChattyIcons.chat)),
         BottomNavigationBarItem(
-            title: Text('People'), icon: Icon(Icons.people)),
+            title: Text('Persons'), icon: Icon(ChattyIcons.people)),
       ],
       currentIndex: _selectedIndex,
       selectedItemColor: Colors.black87,
