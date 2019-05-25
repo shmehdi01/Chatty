@@ -1,3 +1,5 @@
+import 'package:chatty/chat_screen.dart';
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'app_constant.dart';
 
@@ -14,12 +16,18 @@ class ChatBody extends StatelessWidget {
               "5:24 pm",
               isRead: false,
               chatColor: Colors.green,
+              onTap: (){
+                Navigator.push(context, CupertinoPageRoute(builder: (context) => ChatScreen(userName: "Rizwan",)));
+              },
             ),
             ChatTile(
               "Jhon",
               "Hey! man",
               "9:01 pm",
               chatColor: Colors.redAccent,
+              onTap: (){
+                 Navigator.push(context, CupertinoPageRoute(builder: (context) => ChatScreen(userName: "Jhon",)));
+              },
             ),
             ChatTile(
               "Richard Kie",
@@ -27,6 +35,9 @@ class ChatBody extends StatelessWidget {
               "Yesterday",
               isRead: false,
               unreadcound: 5,
+              onTap: (){
+                 Navigator.push(context, CupertinoPageRoute(builder: (context) => ChatScreen(userName: "Richard Kie",)));
+              },
             ),
           ],
         ));
@@ -40,16 +51,19 @@ class ChatTile extends StatelessWidget {
   bool isRead = true;
   int unreadcound = 0;
   Color chatColor;
+  VoidCallback onTap;
 
   ChatTile(this._name, this._chat, this._time,
-      {this.isRead = true, this.unreadcound = 1, this.chatColor = Colors.blue});
+      {this.isRead = true, this.unreadcound = 1, this.chatColor = Colors.blue, this.onTap});
 
   @override
   Widget build(BuildContext context) {
     return Material(
       color: Colors.white,
       child: InkWell(
-        onTap: () {},
+        onTap: () {
+          onTap();
+        },
         child: Container(
   
           padding: EdgeInsets.all(12),
