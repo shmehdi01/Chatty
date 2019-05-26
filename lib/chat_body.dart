@@ -62,10 +62,9 @@ class ChatTile extends StatelessWidget {
       color: Colors.white,
       child: InkWell(
         onTap: () {
-          onTap();
+         if(onTap != null) onTap();
         },
         child: Container(
-  
           padding: EdgeInsets.all(12),
           child: Row(
             children: <Widget>[

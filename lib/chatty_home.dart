@@ -2,7 +2,7 @@ import 'package:chatty/presentations/chatty_icons_icons.dart';
 import 'package:flutter/material.dart';
 import 'app_constant.dart';
 import 'chat_body.dart';
-import 'friends_body.dart';
+import 'person_page/friends_body.dart';
 
 class ChatHome extends StatefulWidget {
   @override
@@ -24,8 +24,8 @@ class _ChatHomeState extends State<ChatHome> {
         ),
       ),
       title: Text(
-        APP_NAME,
-        style: TextStyle(fontFamily: 'poppins_semibold'),
+        _selectedIndex == 0 ? APP_NAME : PERSONS,
+        style: TextStyle(fontFamily: ChattyFont.SEMIBOLD),
       ),
     );
   }
@@ -34,9 +34,9 @@ class _ChatHomeState extends State<ChatHome> {
     return BottomNavigationBar(
       elevation: 5,
       items: <BottomNavigationBarItem>[
-        BottomNavigationBarItem(title: Text('Chats'), icon: Icon(ChattyIcons.chat)),
+        BottomNavigationBarItem(title: Text(CHAT), icon: Icon(ChattyIcons.chat)),
         BottomNavigationBarItem(
-            title: Text('Persons'), icon: Icon(ChattyIcons.people)),
+            title: Text(PERSONS), icon: Icon(ChattyIcons.people)),
       ],
       currentIndex: _selectedIndex,
       selectedItemColor: Colors.black87,
@@ -60,3 +60,4 @@ class _ChatHomeState extends State<ChatHome> {
     );
   }
 }
+
